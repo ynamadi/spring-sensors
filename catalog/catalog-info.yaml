@@ -1,0 +1,88 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: spring-sensors
+  title: Spring Sensors App
+  links:
+    - url: https://spring-sensors-tap-dev.apps.y-compiles.com/
+      title: Spring Sensors App
+      icon: dashboard
+    - url: https://github.com/ynamadi/spring-sensors
+      title: Github
+      icon: dashboard
+  description: WebApp for Spring Sensors
+  tags:
+    - java
+    - springboot
+    - microservice
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-sensors'
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  type: service
+  lifecycle: dev-environment
+  owner: core-dev-team
+  system: spring-sensors-app
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: spring-petclinic-rest
+  description: the classic petclinic API from swagger.io, pulled from a live endpoint.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: tap-gui
+  system: tap
+  definition:
+    $text: https://github.com/sreeramsunkara/spring-petclinic-rest/blob/master/api-docs.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ynamadi
+spec:
+  profile:
+    displayName: Yunusa Namadi
+    email: ynamadi@vmware.com
+    picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+  memberOf: [core-dev-team]
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: sunkarasr
+spec:
+  profile:
+    displayName: Sreeram Sunkara
+    email: sunkarasr@vmware.com
+    picture: https://avatars.dicebear.com/api/avataaars/guest@example.com.svg?background=%23fff
+  memberOf: [core-dev-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: core-dev-team
+  description: Core Dev Team
+spec:
+  type: team
+  profile:
+    displayName: Core Dev Team
+    email: core-dev-team@example.com
+    picture: https://avatars.dicebear.com/api/identicon/team-a@example.com.svg?background=%23fff
+  parent: core-dev-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: dev-env
+  title: Spring Sensors App Demo Environment
+  description: Tanzu Application Platform GUI System
+spec:
+  owner: core-dev-team
+  domain: backend-apps
