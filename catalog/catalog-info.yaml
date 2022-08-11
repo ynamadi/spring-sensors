@@ -4,7 +4,7 @@ metadata:
   name: spring-sensors
   title: Spring Sensors App
   links:
-    - url: https://spring-sensors-tap-dev.apps.y-compiles.com/
+    - url: https://spring-sensors-tap-dev.apps.tap.mc.stg.tanzu.projectscions.com/
       title: Spring Sensors App
       icon: dashboard
     - url: https://github.com/ynamadi/spring-sensors
