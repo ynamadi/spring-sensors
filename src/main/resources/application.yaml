@@ -5,4 +5,4 @@ spring:
 
 management.endpoints.web.exposure.include: "*"
 
-title: Tanzu Sensor Demo Penske
+title: Tanzu Sensor Demo Tester
