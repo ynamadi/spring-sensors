@@ -9,7 +9,7 @@ metadata:
 spec:
   params:
   - name: gitops_branch
-    value: staging
+    value: stage
   - name: gitops_repository_name
     value: spring-sensors
   - name: gitops_repository_owner
