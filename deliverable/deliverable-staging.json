@@ -1,0 +1,45 @@
+{
+  "apiVersion": "carto.run/v1alpha1",
+  "kind": "Deliverable",
+  "metadata": {
+    "creationTimestamp": "2022-08-11T05:53:30Z",
+    "generation": 1,
+    "labels": {
+      "app.kubernetes.io/component": "deliverable",
+      "app.kubernetes.io/part-of": "spring-sensors",
+      "app.tanzu.vmware.com/deliverable-type": "web",
+      "apps.tanzu.vmware.com/has-tests": "true",
+      "apps.tanzu.vmware.com/workload-type": "web",
+      "carto.run/cluster-template-name": "deliverable-template",
+      "carto.run/resource-name": "deliverable",
+      "carto.run/supply-chain-name": "source-test-scan-to-url",
+      "carto.run/template-kind": "ClusterTemplate",
+      "carto.run/workload-name": "spring-sensors",
+      "carto.run/workload-namespace": "tap-dev"
+    },
+    "name": "spring-sensors",
+    "namespace": "tap-dev",
+    "resourceVersion": "8323448",
+    "uid": "07cb44f2-790e-4821-a3c3-9310e04e29aa"
+  },
+  "spec": {
+    "params": [
+      {
+        "name": "gitops_ssh_secret",
+        "value": "git-ssh"
+      },
+      {
+        "name": "gitops_sub_path",
+        "value": "config/tap-dev/spring-sensors"
+      }
+    ],
+    "source": {
+      "git": {
+        "ref": {
+          "branch": "main"
+        },
+        "url": "https://github.com/ynamadi/spring-sensors.git"
+      }
+    }
+  }
+}
