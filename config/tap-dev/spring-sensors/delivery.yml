@@ -47,7 +47,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.tanzu.projectscions.com/tap/tanzu-supply-chain/spring-sensors-tap-dev@sha256:6a44aa863b879fa4cb99cfc3c62727d188e3a4895ab568caea0c229ab6bd36e1
+        image: harbor.tanzu.projectscions.com/tap/tanzu-supply-chain/spring-sensors-tap-dev@sha256:dd438ce75f5392d2605c6e93d342f7f47ef5ea72b14fb9c1c0e911b631617b91
         name: workload
         ports:
         - containerPort: 8080
